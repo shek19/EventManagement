@@ -40,9 +40,12 @@ INSTALLED_APPS = [
     #extra apps
     'rest_framework',
     'corsheaders',
-    'users',
     'rest_framework.authtoken',
     'rest_framework_simplejwt.token_blacklist',
+    #apps
+    'users',
+    'wedding',
+    
 ]
 
 MIDDLEWARE = [
@@ -155,3 +158,19 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
 }
+
+# password reset mail sending
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'  # For example, using Gmail SMTP
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'tabutaatubikki2@gmail.com'
+# EMAIL_HOST_PASSWORD = 'qwerty12345$'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '15ac07636769cc'  # Mailtrap's provided username
+EMAIL_HOST_PASSWORD = 'c87c14af525e90'  # Mailtrap's provided password
+EMAIL_PORT = 2525
+EMAIL_USE_TLS = True  # Ensures secure connection
+
